@@ -1,0 +1,69 @@
+.heroWrapper {
+  background-color: transparent;
+  padding-top: 5rem;
+  height: 35rem;
+  display: flex;
+  background-image: url("/hex-background-networking.jpg");
+  background-size: cover;
+}
+
+.heroPanel {
+  background-color: transparent;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+.heroContent {
+  background-color: white;
+  position: relative;
+}
+
+.heroContentIn {
+  background-color: #1e2929;
+  border-bottom-right-radius: 150px;
+  height: 100%;
+  width: 100%;
+  background-image: url("/hex-background-networking.jpg");
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  padding: 0px 7rem;
+}
+
+.heroImage {
+  background-color: transparent;
+  display: flex;
+}
+
+.heroImageIn {
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  border-top-left-radius: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.statesWrapper {
+  display: flex;
+  padding: 2rem;
+  column-gap: 40px;
+  justify-content: center;
+}
+
+.statesItem {
+  background-color: white;
+  width: 15rem;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  column-gap: 10px;
+}
+
+.statesBody > h5 {
+  font-weight: bold;
+  font-size: 24px;
+}

@@ -1,0 +1,17 @@
+@tailwind utilities;
+@import "tailwindcss";
+
+.body {
+    background-color: blue;
+    height: 100rem;
+}
+
+* {
+    /* font-size: 12px; */
+}
+
+button {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
