@@ -4,6 +4,7 @@ import { FaSearch } from 'react-icons/fa';
 import { UserData } from '../../_data/UserData';
 import  AddressSearchResult from './AddressSearchResult';
 import  AddressSearchSourceList from './AddressSearchSourceList';
+import { censoredPeopleSearchAction } from '../../_actions/CensoredPeopleActions';
 
 
 
@@ -45,6 +46,22 @@ export default function AddressSearch() {
     }
 
 
+    async function searchData() {
+        try{
+            const res = await censoredPeopleSearchAction(query) 
+            console.log(res)
+            setResult({
+                error: false,
+                data: res.data,
+                loading: res.data.length === 0
+            });
+        } catch (error) {
+            console.error(`Error: ${error}`)
+        } 
+    }
+
+
+
   return (
     <>
     <header className="max-w-4xl mx-auto mb-8">
@@ -68,7 +85,7 @@ export default function AddressSearch() {
             onKeyDown={handleKeyPress}
             />
             <button 
-                onClick={handleSearch}
+                onClick={searchData}
                 disabled={result.loading}
                 className='group flex-1 p-3 border-l border-purple-600 flex items-center justify-center'>
                 <FaSearch className='group-hover:scale-110 ease-linear duration-200 transition-all' />

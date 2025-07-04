@@ -1,0 +1,1 @@
+export const baseURL: string = "https://api.vericheck.co.zw/"

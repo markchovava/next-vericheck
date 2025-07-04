@@ -4,11 +4,13 @@ import React from 'react'
 import { FaAngleRight } from "react-icons/fa";
 import SanctionUserView from './_components/SanctionUserView';
 import { UserData } from '../../_data/UserData';
+import { censoredPeopleViewAction } from '../../_actions/CensoredPeopleActions';
 
 
 
 export default function page({ params: {id} }) {
-  const data = UserData.find((i) => i.id === parseInt(id))
+  //const data = UserData.find((i) => i.id === parseInt(id))
+  const [data, ] = Promise.all([censoredPeopleViewAction( parseInt(id) ), ])
 
   return (
     <>

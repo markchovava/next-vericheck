@@ -4,6 +4,7 @@ import SanctionResult from './SanctionResult';
 import SanctionSourceList from './SanctionSourceList';
 import { FaSearch } from 'react-icons/fa';
 import { UserData } from '../../_data/UserData';
+import { censoredPeopleSearchAction } from '../../_actions/CensoredPeopleActions';
 
 
 
@@ -45,6 +46,24 @@ export default function Sanctions() {
     }
 
 
+    async function searchData() {
+        console.log("SEARCHING...")
+        try{
+            const res = await censoredPeopleSearchAction(query) 
+            console.log('res')
+            console.log(res)
+            setResult({
+                error: false,
+                data: res.data,
+                loading: res.data.length === 0
+            });
+        } catch (error) {
+            console.error(`Error: ${error}`)
+        } 
+    }
+    
+
+
   return (
     <>
     <header className="max-w-4xl mx-auto mb-8">
@@ -68,7 +87,7 @@ export default function Sanctions() {
             onKeyDown={handleKeyPress}
             />
             <button 
-                onClick={handleSearch}
+                onClick={searchData}
                 disabled={result.loading}
                 className='group flex-1 p-3 border-l border-purple-600 flex items-center justify-center'>
                 <FaSearch className='group-hover:scale-110 ease-linear duration-200 transition-all' />
