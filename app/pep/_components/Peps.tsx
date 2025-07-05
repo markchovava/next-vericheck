@@ -4,58 +4,101 @@ import { FaSearch } from 'react-icons/fa';
 import { UserData } from '../../_data/UserData';
 import PepResult from './PepResult';
 import PepSourceList from './PepSourceList';
-import { censoredPeopleSearchAction } from '../../_actions/CensoredPeopleActions';
+import { censoredPeoplePaginateAction, censoredPeopleSearchAction } from '../../_actions/CensoredPeopleActions';
 
 
 
 export default function Peps() {
-    const dataset = UserData
-    const [result, setResult] = useState({data: [], error: false, loading: false})
+    const [result, setResult] = useState({
+        data: [], 
+        links: {}, 
+        loadMore: false, 
+        error: false, 
+        loading: false,
+        meta: {},
+    })
     const [query, setQuery] = useState("");
     const [isResult, setIsResult] = useState(false)
 
-    const handleSearch = () => {
-        if (!query.trim()) {
-            setResult({data: [], error: true, loading: false})
-            setIsResult(true)
-            return
-        }
-
-        // Set loading state
-        setResult({data: [], error: false, loading: true})
-        setIsResult(true)
-
-        // Simulate search delay (remove this in production if not needed)
-        setTimeout(() => {
-            const searchResult = dataset.filter((item) =>
-                item.name.toLowerCase().includes(query.toLowerCase())
-            )
-            
-            setResult({
-                data: searchResult, 
-                error: searchResult.length === 0, 
-                loading: false
-            })
-        }, 500) // 500ms delay to show loading state
-    }
-
-    const handleKeyPress = (e) => {
+    const handleKeyPress = (e: KeyboardEvent) => {
         if (e.key === 'Enter') {
-            handleSearch()
+            searchData()
         }
     }
 
-
-    async function searchData() {
+    async function getData(url: string) {
+        setResult({
+            ...result, 
+            loadMore: true
+        })
         try{
-            const res = await censoredPeopleSearchAction(query) 
+            const res = await censoredPeoplePaginateAction(url) 
+            console.log(res)
             setResult({
                 error: false,
-                data: res.data,
-                loading: res.data.length === 0
+                data: [...result.data, ...res.data],
+                loading: res.data.length === 0,
+                links: res.links,
+                loadMore: false, 
+                meta: res.meta,
             });
         } catch (error) {
             console.error(`Error: ${error}`)
+            setResult({
+                error: false,
+                data: [],
+                loading: false,
+                links: {},
+                loadMore: false, 
+                meta: {},
+            });
+        } 
+    }
+    
+    async function searchData() {
+        if (!query.trim()) {
+            setResult({
+                data: [], 
+                links: {}, 
+                error: true, 
+                loading: false,
+                loadMore: false, 
+                meta: {},
+            })
+            setIsResult(true)
+            return
+        }
+        // Set loading state
+        setResult({
+            data: [], 
+            links: {}, 
+            error: false, 
+            loading: true,
+            loadMore: false, 
+            meta: {},
+        })
+        setIsResult(true)
+        try{
+            const res = await censoredPeopleSearchAction(query) 
+            console.log("res", res)
+            setResult({
+                error: false,
+                data: res.data,
+                loading: res.data.length === 0,
+                links: res.links,
+                loadMore: false, 
+                meta: res.meta,
+            });
+        } catch (error) {
+            console.error(`Error: ${error}`)
+            setResult({
+                error: false,
+                data: [],
+                loading: false,
+                links: {},
+                loadMore: false, 
+                meta: {},
+            });
         } 
     }
 
@@ -88,12 +131,12 @@ export default function Peps() {
                 className='group flex-1 p-3 border-l border-purple-600 flex items-center justify-center'>
                 <FaSearch className='group-hover:scale-110 ease-linear duration-200 transition-all' />
             </button>
-        </div>
-        
+        </div> 
     </header>
 
+
     {isResult ? (
-        <PepResult dbData={result} />
+        <PepResult dbData={result} getData={getData} />
     ) : (
         <PepSourceList />
     )}

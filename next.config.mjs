@@ -11,9 +11,7 @@ const nextConfig = {
         bodySizeLimit: '300mb',
       },
     },
-    images: {
-        domains: ['localhost']
-    }
+    
 };
 
 export default nextConfig;

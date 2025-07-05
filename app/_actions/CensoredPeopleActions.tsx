@@ -14,6 +14,18 @@ export async function censoredPeopleSearchAction(search: string) {
 }
 
 
+export async function censoredPeoplePaginateAction(url: string) {
+    const res = await fetch(url, {
+      'method': 'GET',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      }
+    });
+    return await res.json();
+}
+
+
 
 export async function censoredPeopleViewAction(id: number) {
     const res = await fetch(`${baseURL}censored-people/${id}`, {

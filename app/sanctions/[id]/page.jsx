@@ -1,16 +1,15 @@
-import Image from 'next/image'
 import Link from 'next/link';
 import React from 'react'
 import { FaAngleRight } from "react-icons/fa";
 import SanctionUserView from './_components/SanctionUserView';
-import { UserData } from '../../_data/UserData';
 import { censoredPeopleViewAction } from '../../_actions/CensoredPeopleActions';
 
 
 
-export default function page({ params: {id} }) {
-  //const data = UserData.find((i) => i.id === parseInt(id))
-  const [data, ] = Promise.all([censoredPeopleViewAction( parseInt(id) ), ])
+export default async function page({ params: {id} }) {
+  const [data, ] = await Promise.all([censoredPeopleViewAction( parseInt(id) ), ])
+
+
 
   return (
     <>
@@ -26,8 +25,8 @@ export default function page({ params: {id} }) {
           <li>Sanctions</li>
         </Link>
         <li><FaAngleRight /></li>
-        <Link href={`/sanctions/${data.id}`}>
-          <li className='font-semibold'>{data.name}</li>
+        <Link href={`/sanctions/${id}`}>
+          <li className='font-semibold'>{data?.data?.person?.name}</li>
         </Link>
       </ul>
 

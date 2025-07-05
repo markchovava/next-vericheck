@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import React from 'react'
 
-export default function SanctionUserView({ id, dbData }) {
- const person = dbData?.data?.person
+export default function PepUserView({ id, dbData }) {
+  const person = dbData?.data?.person
   const board = dbData?.data?.board || []
   const position_held = dbData?.data?.position_held || []
   const judgement = dbData?.data?.judgement || []
