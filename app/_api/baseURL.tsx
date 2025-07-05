@@ -1,1 +1,1 @@
-export const baseURL: string = "https://api.vericheck.co.zw/"
+export const baseURL: string = "http://api.vericheck.co.zw/"
