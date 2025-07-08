@@ -29,7 +29,7 @@ export default function Page() {
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-6xl font-light text-white mb-6 leading-tight">
               secure, reliable,
-              <span className="text-purple-400 block font-extralight">
+              <span className="text-primary block font-extralight">
                 verified
               </span>
             </h1>
@@ -77,7 +77,7 @@ export default function Page() {
             <div className="bg-gray-800 p-12 border border-gray-700">
               <div className="space-y-8">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-purple-600 flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-primary flex items-center justify-center flex-shrink-0">
                     <Shield className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -119,7 +119,7 @@ export default function Page() {
           </h2>
           <div className="grid grid-cols-5 gap-8">
             <div className="bg-gray-900 p-8 border border-gray-600 text-center">
-              <Target className="w-12 h-12 text-purple-400 mx-auto mb-4" />
+              <Target className="w-12 h-12 text-primary mx-auto mb-4" />
               <h3 className="text-xl font-light text-white mb-3">Accuracy</h3>
               <p className="text-gray-300 font-light text-sm">
                 Providing precise, error-free verifications
@@ -168,7 +168,7 @@ export default function Page() {
             The Challenges We Solve
           </h2>
           <div className="grid grid-cols-4 gap-8">
-            <div className="bg-purple-600 p-8 text-white">
+            <div className="bg-primary p-8 text-white">
               <Shield className="w-16 h-16 mb-6" />
               <h3 className="text-2xl font-light mb-4">Fraud Prevention</h3>
               <p className="font-light text-purple-100">
@@ -222,7 +222,7 @@ export default function Page() {
             </h3>
             <div className="grid grid-cols-3 gap-8">
               <div className="bg-gray-900 p-6 border border-gray-600">
-                <FileText className="w-12 h-12 text-purple-400 mb-4" />
+                <FileText className="w-12 h-12 text-primary mb-4" />
                 <h4 className="text-xl font-light text-white mb-3">
                   Identity Verification
                 </h4>
@@ -296,7 +296,7 @@ export default function Page() {
               Screening Services
             </h3>
             <div className="grid grid-cols-4 gap-8">
-              <div className="bg-purple-600 p-6 text-white">
+              <div className="bg-primary p-6 text-white">
                 <Users className="w-12 h-12 mb-4" />
                 <h4 className="text-xl font-light mb-3">PEP Screening</h4>
                 <p className="font-light text-purple-100 text-sm">
@@ -341,7 +341,7 @@ export default function Page() {
           </h2>
           <div className="grid grid-cols-4 gap-8">
             <div className="bg-gray-800 p-8 border border-gray-600 text-center">
-              <Building className="w-16 h-16 text-purple-400 mx-auto mb-6" />
+              <Building className="w-16 h-16 text-primary mx-auto mb-6" />
               <h3 className="text-xl font-light text-white mb-4">
                 Banking & Finance
               </h3>
@@ -394,7 +394,7 @@ export default function Page() {
           </h2>
           <div className="grid grid-cols-5 gap-8">
             <div className="text-center">
-              <div className="w-20 h-20 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
                 <Target className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-xl font-light text-white mb-3">Accuracy</h3>
@@ -445,7 +445,7 @@ export default function Page() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-purple-600">
+      <section className="py-16 bg-primary">
         <div className="max-w-7xl mx-auto px-8 text-center">
           <h2 className="text-4xl font-light text-white mb-6">
             Partner with us for a safer, smarter future
@@ -456,10 +456,10 @@ export default function Page() {
             screening services.
           </p>
           <div className="flex flex-row gap-4 justify-center">
-            <button className="bg-white text-purple-600 px-8 py-4 hover:bg-gray-100 transition-colors font-light text-lg">
+            <button className="bg-white text-primary px-8 py-4 hover:bg-gray-100 transition-colors font-light text-lg">
               Start Free Trial
             </button>
-            <button className="border border-white text-white px-8 py-4 hover:bg-white hover:text-purple-600 transition-colors font-light text-lg">
+            <button className="border border-white text-white px-8 py-4 hover:bg-white hover:text-primary transition-colors font-light text-lg">
               Contact Sales
             </button>
           </div>
@@ -474,7 +474,7 @@ export default function Page() {
           </h2>
           <div className="grid grid-cols-4 gap-8">
             <div className="bg-gray-800 p-8 border border-gray-600 text-center">
-              <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
                 <MapPin className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-light text-white mb-3">Address</h3>

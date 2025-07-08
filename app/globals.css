@@ -6,12 +6,35 @@
     height: 100rem;
 }
 
-* {
-    /* font-size: 12px; */
-}
 
 button {
     cursor: pointer;
     background-color: transparent;
     border: none;
+}
+
+
+/* Tailwind-style hover utilities */
+.text-primary, .hover\:text-primary:hover {
+    color: #1779BE;
+}
+
+.text-secondary, .hover\:text-secondary:hover {
+    color: #13537A;
+}
+
+.bg-primary, .hover\:bg-primary:hover {
+    background-color: #1779BE;
+}
+
+.bg-secondary, .hover\:bg-secondary:hover {
+    background-color: #13537A;
+}
+
+.border-primary{
+    border-color: #1779BE;
+}
+
+.border-secondary{
+    border-color: #13537A;
 }

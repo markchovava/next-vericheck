@@ -46,7 +46,7 @@ export default function Page() {
       <section className="mb-10 max-w-5xl mx-auto px-4">
         <h1 className="text-5xl font-light text-white mb-2 leading-tight text-left">
           Support Center
-          <span className="text-purple-400 block font-extralight mt-1">
+          <span className="text-primary block font-extralight mt-1">
             How can we help you?
           </span>
         </h1>
@@ -59,7 +59,7 @@ export default function Page() {
       {/* Support Info Tiles */}
       <section className="max-w-5xl mx-auto grid grid-cols-4 gap-6 mb-16">
         {/* Security Tile */}
-        <div className="flip-tile bg-purple-600 text-white h-48 rounded-xl shadow-lg cursor-default p-6 flex flex-col justify-center items-center">
+        <div className="flip-tile bg-primary text-white h-48 rounded-xl shadow-lg cursor-default p-6 flex flex-col justify-center items-center">
           <Shield className="w-14 h-14 mb-3" />
           <h2 className="text-2xl font-light mb-1">Enterprise Security</h2>
           <p className="text-sm font-extralight text-center">
@@ -190,7 +190,7 @@ export default function Page() {
             <div className="text-center">
               <button
                 type="submit"
-                className="bg-purple-600 text-white font-semibold text-lg py-4 px-16 shadow-lg hover:brightness-110 transform hover:scale-105 transition inline-flex items-center space-x-3"
+                className="bg-primary text-white font-semibold text-lg py-4 px-16 shadow-lg hover:brightness-110 transform hover:scale-105 transition inline-flex items-center space-x-3"
               >
                 <span>Submit Request</span>
                 <ArrowRight className="w-5 h-5" />
@@ -200,10 +200,7 @@ export default function Page() {
         </form>
       </section>
 
-      {/* Footer */}
-      <footer className="max-w-5xl mx-auto mt-14 text-center text-gray-400 font-light text-xs tracking-wide">
-        &copy; {new Date().getFullYear()} Your Company. All rights reserved.
-      </footer>
+     
     </div>
   );
 }

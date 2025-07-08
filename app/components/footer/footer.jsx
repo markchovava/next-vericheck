@@ -1,6 +1,7 @@
 "use client";
 
 import { CheckCircle } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
@@ -17,14 +18,16 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-8">
         <div className="grid grid-cols-5 gap-12">
           <div className="col-span-2">
-            <Link href="/">
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="w-8 h-8 bg-purple-600 flex items-center justify-center">
-                <CheckCircle className="w-5 h-5 text-white" />
-              </div>
-              <span className="text-xl font-light text-white">VeriCheck</span>
+           <Link href="/">
+            <div className="h-[50px] aspect-[5.5/1] relative">
+              <Image
+                src="/assets/img/logo.png"
+                fill
+                alt="Company Logo"
+                className="object-fill w-[100%]"
+              /> 
             </div>
-            </Link>
+          </Link>
             <p className="text-gray-400 font-light text-lg leading-relaxed">
               Leading provider of verification and compliance solutions for
               businesses worldwide.
@@ -44,9 +47,9 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <Link href="/document-auth" className="hover:text-white transition-colors">
                   Document Verification
-                </a>
+                </Link>
               </li>
               <li>
                 <Link href="/address-search" className="hover:text-white transition-colors">
@@ -64,31 +67,17 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="contact" className="hover:text-white transition-colors">
+                <a href="/contact" className="hover:text-white transition-colors">
                   Contact
                 </a>
               </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Careers
-                </a>
-              </li>
+              
              
             </ul>
           </div>
           <div>
             <h3 className="font-light text-white mb-6 text-lg">Support</h3>
             <ul className="space-y-3 text-gray-400 font-light">
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Help Center
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  API Documentation
-                </a>
-              </li>
               <li>
                 <a href="#" className="hover:text-white transition-colors">
                   Privacy Policy

@@ -72,7 +72,7 @@ export default function Page() {
                       flexDirection: "column",
                       gap: "0px",
                     }}
-                    className="text-purple-700"
+                    className="text-primary"
                   >
                     Verification made simple
                   </div>
@@ -82,14 +82,9 @@ export default function Page() {
                   </p>
                   <div className="flex gap-2 mt-15">
                     <Link href="/address-search">
-                      <button className="bg-purple-700 hover:drop-shadow-lg text-white font-semibold rounded-2xl p-2 px-4">
+                      <button className="bg-primary hover:drop-shadow-lg text-white font-semibold rounded-2xl p-3 px-6">
                         Address Search
                       </button>
-                    </Link>
-                    <Link href="/explore">
-                    <button className="border-2 border-purple-700 text-purple-700 rounded-2xl p-1 px-4 font-bold">
-                      Explore Vericheck
-                    </button>
                     </Link>
                   </div>
                 </div>
@@ -149,7 +144,7 @@ export default function Page() {
             <div className="col-span-4 row-span-2 flip-tile cursor-pointer">
               <div className="flip-tile-inner">
                 {/* Front */}
-                <div className="flip-tile-front bg-purple-600 text-white">
+                <div className="flip-tile-front bg-primary text-white">
                   <div className="p-12 h-full flex flex-col justify-start">
                     <div>
                       <Shield className="w-20 h-20 mb-8" />
@@ -177,7 +172,7 @@ export default function Page() {
                 </div>
                 {/* Back */}
                 <div
-                  className="flip-tile-back bg-purple-700 text-white"
+                  className="flip-tile-back bg-primary text-white"
                   onClick={() => router.push("/sanctions")}
                 >
                   <div className="p-12 h-full flex flex-col justify-center">
@@ -218,7 +213,7 @@ export default function Page() {
             </div>
 
             {/* PEP - Medium Tile */}
-            <div className="col-span-2 row-span-1 flip-tile cursor-pointer">
+            <div className="col-span-2 row-span-1 flip-tile cursor-pointer overflow-hidden">
               <div className="flip-tile-inner">
                 {/* Front */}
                 <div className="flip-tile-front bg-blue-600 text-white">
@@ -274,7 +269,7 @@ export default function Page() {
             </div>
 
             {/* Document Verification - Medium Tile */}
-            <div className="col-span-2 row-span-1 flip-tile cursor-pointer">
+            <div className="col-span-2 row-span-1 flip-tile cursor-pointer overflow-hidden">
               <div className="flip-tile-inner">
                 {/* Front */}
                 <div className="flip-tile-front bg-green-600 text-white">
@@ -331,9 +326,9 @@ export default function Page() {
             </div>
 
             {/* API Integration - Small Tile */}
-            <div className="col-span-2 row-span-1 flip-tile cursor-pointer">
+            {/*  <div className="col-span-2 row-span-1 flip-tile cursor-pointer">
               <div className="flip-tile-inner">
-                {/* Front */}
+  
                 <div className="flip-tile-front bg-gray-700 text-white">
                   <div className="p-6 h-full flex flex-col justify-between">
                     <div>
@@ -346,7 +341,7 @@ export default function Page() {
                     <ArrowRight className="w-4 h-4" />
                   </div>
                 </div>
-                {/* Back */}
+
                 <div className="flip-tile-back bg-gray-600 text-white">
                   <div className="p-4 h-full flex flex-col justify-center">
                     <h4 className="text-lg font-light mb-3 text-center">
@@ -375,12 +370,60 @@ export default function Page() {
                   </div>
                 </div>
               </div>
+            </div> */}
+
+            {/* 24/7 Support - Medium Tile */}
+            <div className="col-span-2 flip-tile cursor-pointer overflow-hidden">
+              <div className="flip-tile-inner">
+                {/* Front */}
+                <div className="flip-tile-front bg-red-600 text-white">
+                  <div className="p-8 h-full flex flex-col justify-between">
+                    <div>
+                      <Clock className="w-14 h-14 mb-4" />
+                      <h3 className="text-xl font-light text-start">24/7</h3>
+                      <p className="text-sm font-extralight text-red-100 text-start">
+                        support
+                      </p>
+                    </div>
+                    <ArrowRight className="w-5 h-5" />
+                  </div>
+                </div>
+                {/* Back */}
+                <div className="flip-tile-back bg-red-700 text-white"
+                  onClick={() => router.push("/support")}>
+                  <div className="p-6 h-full flex flex-col justify-center">
+                    <h3 className="text-lg font-light mb-4 text-center">
+                      24/7 Support
+                    </h3>
+                    <div className="space-y-3 text-red-100 text-sm">
+                      <div className="flex items-start space-x-2">
+                        <div className="w-1.5 h-1.5 bg-red-300 rounded-full mt-1.5 flex-shrink-0"></div>
+                        <p className="font-light">
+                          Round-the-clock technical support
+                        </p>
+                      </div>
+                      <div className="flex items-start space-x-2">
+                        <div className="w-1.5 h-1.5 bg-red-300 rounded-full mt-1.5 flex-shrink-0"></div>
+                        <p className="font-light">
+                          Dedicated account management
+                        </p>
+                      </div>
+                      <div className="flex items-start space-x-2">
+                        <div className="w-1.5 h-1.5 bg-red-300 rounded-full mt-1.5 flex-shrink-0"></div>
+                        <p className="font-light">
+                          Priority response for enterprise clients
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Real-time Results - Small Tile */}
+            {/* 
             <div className="col-span-2 row-span-1 flip-tile cursor-pointer">
               <div className="flip-tile-inner">
-                {/* Front */}
                 <div className="flip-tile-front bg-indigo-600 text-white">
                   <div className="p-6 h-full flex flex-col justify-between">
                     <div>
@@ -395,7 +438,6 @@ export default function Page() {
                     <ArrowRight className="w-4 h-4" />
                   </div>
                 </div>
-                {/* Back */}
                 <div className="flip-tile-back bg-indigo-700 text-white">
                   <div className="p-4 h-full flex flex-col justify-center">
                     <h4 className="text-lg font-light mb-3 text-center">
@@ -421,6 +463,7 @@ export default function Page() {
                 </div>
               </div>
             </div>
+             */}
 
             {/* Address Search - Large Tile */}
             <div className="col-span-4 row-span-1 flip-tile cursor-pointer overflow-hidden">
@@ -504,57 +547,11 @@ export default function Page() {
               </div>
             </div>
 
-            {/* 24/7 Support - Medium Tile */}
-            <div className="col-span-2 flip-tile cursor-pointer">
-              <div className="flip-tile-inner">
-                {/* Front */}
-                <div className="flip-tile-front bg-red-600 text-white">
-                  <div className="p-8 h-full flex flex-col justify-between">
-                    <div>
-                      <Clock className="w-14 h-14 mb-4" />
-                      <h3 className="text-xl font-light text-start">24/7</h3>
-                      <p className="text-sm font-extralight text-red-100 text-start">
-                        support
-                      </p>
-                    </div>
-                    <ArrowRight className="w-5 h-5" />
-                  </div>
-                </div>
-                {/* Back */}
-                <div className="flip-tile-back bg-red-700 text-white">
-                  <div className="p-6 h-full flex flex-col justify-center">
-                    <h3 className="text-lg font-light mb-4 text-center">
-                      24/7 Support
-                    </h3>
-                    <div className="space-y-3 text-red-100 text-sm">
-                      <div className="flex items-start space-x-2">
-                        <div className="w-1.5 h-1.5 bg-red-300 rounded-full mt-1.5 flex-shrink-0"></div>
-                        <p className="font-light">
-                          Round-the-clock technical support
-                        </p>
-                      </div>
-                      <div className="flex items-start space-x-2">
-                        <div className="w-1.5 h-1.5 bg-red-300 rounded-full mt-1.5 flex-shrink-0"></div>
-                        <p className="font-light">
-                          Dedicated account management
-                        </p>
-                      </div>
-                      <div className="flex items-start space-x-2">
-                        <div className="w-1.5 h-1.5 bg-red-300 rounded-full mt-1.5 flex-shrink-0"></div>
-                        <p className="font-light">
-                          Priority response for enterprise clients
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
 
             {/* Get Started - CTA Tile */}
-            <div className="col-span-2 flip-tile cursor-pointer">
+            {/* <div className="col-span-2 flip-tile cursor-pointer">
               <div className="flip-tile-inner">
-                {/* Front */}
+
                 <div className="flip-tile-front bg-yellow-600 text-white">
                   <div className="p-8 h-full flex flex-col justify-center items-center text-center">
                     <h3 className="text-2xl font-light mb-2">get started</h3>
@@ -563,8 +560,8 @@ export default function Page() {
                     </p>
                     <ArrowRight className="w-6 h-6" />
                   </div>
-                </div>
-                {/* Back */}
+                </div> 
+
                 <div className="flip-tile-back bg-yellow-700 text-white">
                   <div className="p-6 h-full flex flex-col justify-center text-center">
                     <h3 className="text-lg font-light mb-4">
@@ -587,8 +584,7 @@ export default function Page() {
                   </div>
                 </div>
               </div>
-            </div>
-
+            </div> */}
 
           </div>
 
