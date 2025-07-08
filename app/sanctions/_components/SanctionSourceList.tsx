@@ -76,7 +76,7 @@ export default function SanctionSourceList() {
                 p-5
                 flex flex-col
                 justify-between
-                border-4 border-gray-300
+                border-4 border-primary
                 acrylic-blur
               "
               title={dataset.title}
