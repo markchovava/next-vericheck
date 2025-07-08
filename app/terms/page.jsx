@@ -5,7 +5,7 @@ export default function Page() {
   return (
     <div className="min-h-screen bg-gray-900 font-inter text-gray-100 p-4 sm:p-8 md:p-12 lg:p-16 flex items-center justify-center">
       <div className="max-w-4xl w-full bg-gray-800 shadow-lg rounded-xl p-6 sm:p-8 md:p-10 lg:p-12 border border-gray-700">
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-center text-indigo-400 mb-6 sm:mb-8 md:mb-10 rounded-lg p-2">
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-center text-primary mb-6 sm:mb-8 md:mb-10 rounded-lg p-2">
           Terms of Service
         </h1>
         <p className="text-sm sm:text-base text-gray-400 mb-6 text-center">
@@ -14,7 +14,7 @@ export default function Page() {
 
         {/* Introduction Section */}
         <section className="mb-8">
-          <h2 className="text-xl sm:text-2xl font-bold text-indigo-300 mb-4 pb-2 border-b-2 border-indigo-700">
+          <h2 className="text-xl sm:text-2xl font-bold text-primary mb-4 pb-2 border-b-2 border-primary">
             1. Introduction
           </h2>
           <p className="mb-4 text-gray-300 leading-relaxed">
@@ -27,7 +27,7 @@ export default function Page() {
 
         {/* Account Registration Section */}
         <section className="mb-8">
-          <h2 className="text-xl sm:text-2xl font-bold text-indigo-300 mb-4 pb-2 border-b-2 border-indigo-700">
+          <h2 className="text-xl sm:text-2xl font-bold text-primary mb-4 pb-2 border-b-2 border-primary">
             2. Account Registration
           </h2>
           <p className="mb-4 text-gray-300 leading-relaxed">
@@ -44,7 +44,7 @@ export default function Page() {
 
         {/* Use of Service Section */}
         <section className="mb-8">
-          <h2 className="text-xl sm:text-2xl font-bold text-indigo-300 mb-4 pb-2 border-b-2 border-indigo-700">
+          <h2 className="text-xl sm:text-2xl font-bold text-primary mb-4 pb-2 border-b-2 border-primary">
             3. Use of Service
           </h2>
           <p className="mb-4 text-gray-300 leading-relaxed">
@@ -58,7 +58,7 @@ export default function Page() {
 
         {/* Intellectual Property Section */}
         <section className="mb-8">
-          <h2 className="text-xl sm:text-2xl font-bold text-indigo-300 mb-4 pb-2 border-b-2 border-indigo-700">
+          <h2 className="text-xl sm:text-2xl font-bold text-primary mb-4 pb-2 border-b-2 border-primary">
             4. Intellectual Property
           </h2>
           <p className="mb-4 text-gray-300 leading-relaxed">
@@ -68,7 +68,7 @@ export default function Page() {
 
         {/* Disclaimers Section */}
         <section className="mb-8">
-          <h2 className="text-xl sm:text-2xl font-bold text-indigo-300 mb-4 pb-2 border-b-2 border-indigo-700">
+          <h2 className="text-xl sm:text-2xl font-bold text-primary mb-4 pb-2 border-b-2 border-primary">
             5. Disclaimers
           </h2>
           <p className="mb-4 text-gray-300 leading-relaxed">
@@ -78,7 +78,7 @@ export default function Page() {
 
         {/* Limitation of Liability Section */}
         <section className="mb-8">
-          <h2 className="text-xl sm:text-2xl font-bold text-indigo-300 mb-4 pb-2 border-b-2 border-indigo-700">
+          <h2 className="text-xl sm:text-2xl font-bold text-primary mb-4 pb-2 border-b-2 border-primary">
             6. Limitation of Liability
           </h2>
           <p className="mb-4 text-gray-300 leading-relaxed">
@@ -88,7 +88,7 @@ export default function Page() {
 
         {/* Governing Law Section */}
         <section className="mb-8">
-          <h2 className="text-xl sm:text-2xl font-bold text-indigo-300 mb-4 pb-2 border-b-2 border-indigo-700">
+          <h2 className="text-xl sm:text-2xl font-bold text-primary mb-4 pb-2 border-b-2 border-primary">
             7. Governing Law
           </h2>
           <p className="mb-4 text-gray-300 leading-relaxed">
@@ -98,7 +98,7 @@ export default function Page() {
 
         {/* Changes to Terms Section */}
         <section className="mb-8">
-          <h2 className="text-xl sm:text-2xl font-bold text-indigo-300 mb-4 pb-2 border-b-2 border-indigo-700">
+          <h2 className="text-xl sm:text-2xl font-bold text-primary mb-4 pb-2 border-b-2 border-primary">
             8. Changes to Terms
           </h2>
           <p className="mb-4 text-gray-300 leading-relaxed">
@@ -111,7 +111,7 @@ export default function Page() {
 
         {/* Contact Us Section */}
         <section>
-          <h2 className="text-xl sm:text-2xl font-bold text-indigo-300 mb-4 pb-2 border-b-2 border-indigo-700">
+          <h2 className="text-xl sm:text-2xl font-bold text-primary mb-4 pb-2 border-b-2 border-primary">
             9. Contact Us
           </h2>
           <p className="mb-4 text-gray-300 leading-relaxed">
