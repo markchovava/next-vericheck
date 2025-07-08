@@ -18,7 +18,7 @@ export default function PepResult({ dbData, getData }) {
             {dbData.loading && (
                 <section className='flex items-center justify-center my-[3rem]'>
                     <div className="flex items-center space-x-2">
-                        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-purple-600"></div>
+                        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
                         <p className='text-2xl'>Searching...</p>
                     </div>
                 </section>
@@ -50,7 +50,7 @@ export default function PepResult({ dbData, getData }) {
                     <div className='w-[100%] flex justify-between'>   
                         <div className='flex-3 text-xl'>
                             <div className='w-[100%] mb-6 flex justify-start items-center gap-3'>
-                                <p className='text-purple-400'>{i.name || 'Unknown'}</p>
+                                <p className='text-primary'>{i.name || 'Unknown'}</p>
                                 {i.status &&
                                 <>
                                     <p className='text-gray-500'>|</p>
@@ -98,7 +98,7 @@ export default function PepResult({ dbData, getData }) {
                         </div>    
                         <div className='flex-1 flex justify-end'>
                             <Link href={`/pep/${i.id}`}>
-                                <button className='py-3 px-5 rounded-xl hover:drop-shadow-lg bg-purple-600 hover:bg-purple-700 text-white ease-in-out duration-150'>
+                                <button className='py-3 px-5 rounded-xl hover:drop-shadow-lg bg-primary hover:bg-primary text-white ease-in-out duration-150'>
                                     View Details
                                 </button>
                             </Link>

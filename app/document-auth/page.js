@@ -4,28 +4,28 @@ import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 
 const documentTypes = [
-  { id: "passport", label: "Passport", color: "bg-purple-600" },
-  { id: "driver-license", label: "Driver's License", color: "bg-purple-700" },
-  { id: "id-card", label: "ID Card", color: "bg-purple-500" },
-  { id: "resident-permit", label: "Resident Permit", color: "bg-purple-800" },
-  { id: "other", label: "Other", color: "bg-purple-400" },
+  { id: "passport", label: "Passport", color: "bg-primary" },
+  { id: "driver-license", label: "Driver's License", color: "bg-primary" },
+  { id: "id-card", label: "ID Card", color: "bg-primary" },
+  { id: "resident-permit", label: "Resident Permit", color: "bg-primary" },
+  { id: "other", label: "Other", color: "bg-primary" },
 ];
 
 const mlModels = [
-  { id: "svm", name: "SVM Classifier", accuracy: 88, color: "bg-purple-600" },
+  { id: "svm", name: "SVM Classifier", accuracy: 88, color: "bg-primary" },
   {
     id: "cnn",
     name: "CNN Neural Network",
     accuracy: 94,
-    color: "bg-purple-700",
+    color: "bg-primary",
   },
   {
     id: "random-forest",
     name: "Random Forest",
     accuracy: 90,
-    color: "bg-purple-500",
+    color: "bg-primary",
   },
-  { id: "xgboost", name: "XGBoost", accuracy: 92, color: "bg-purple-800" },
+  { id: "xgboost", name: "XGBoost", accuracy: 92, color: "bg-primary" },
 ];
 
 export default function DocumentVerification() {
@@ -126,7 +126,7 @@ export default function DocumentVerification() {
         }
         /* Keyboard focus for tiles */
         .tile:focus {
-          outline: 3px solid #7c3aed; /* purple-600 */
+          outline: 3px solid #7c3aed; /* primary */
           outline-offset: 2px;
           z-index: 10;
         }
@@ -134,7 +134,7 @@ export default function DocumentVerification() {
 
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl w-full space-y-8 bg-white dark:bg-gray-800 p-10 rounded-xl shadow-xl">
-          <h2 className="text-center text-4xl font-extrabold text-purple-600 select-none">
+          <h2 className="text-center text-4xl font-extrabold text-primary select-none">
             Document Verification
           </h2>
           <p className="text-center text-gray-600 dark:text-gray-300 mb-6 select-none max-w-3xl mx-auto">
@@ -156,7 +156,7 @@ export default function DocumentVerification() {
                 name="document-upload"
                 type="file"
                 accept="image/*,application/pdf"
-                className="block w-full text-sm text-gray-900 dark:text-gray-200 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-purple-600 file:text-white hover:file:bg-purple-700 cursor-pointer focus:outline-none focus:ring-4 focus:ring-purple-300"
+                className="block w-full text-sm text-gray-900 dark:text-gray-200 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-primary file:text-white hover:file:bg-primary cursor-pointer focus:outline-none focus:ring-4 focus:ring-blue-700"
                 onChange={onFileChange}
                 ref={fileInputRef}
               />
@@ -167,7 +167,7 @@ export default function DocumentVerification() {
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 select-none">
                   Document Preview
                 </label>
-                <div className="border border-purple-600 rounded-md p-2 bg-white dark:bg-gray-700 overflow-auto max-h-72">
+                <div className="border border-primary rounded-md p-2 bg-white dark:bg-gray-700 overflow-auto max-h-72">
                   {file.type.startsWith("image/") ? (
                     <Image
                       src={fileURL}
@@ -195,7 +195,7 @@ export default function DocumentVerification() {
 
           {/* Document Types Section as Tiles */}
           <section aria-label="Select Document Type" className="space-y-3">
-            <h3 className="text-xl font-semibold text-purple-600 select-none">
+            <h3 className="text-xl font-semibold text-primary select-none">
               Select Document Type
             </h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
@@ -203,10 +203,10 @@ export default function DocumentVerification() {
                 const isSelected = selectedDocType === id;
                 const tileClasses = `${color} ${
                   isSelected
-                    ? "ring-4 ring-offset-2 ring-purple-400"
-                    : "hover:ring-4 hover:ring-purple-300"
+                    ? "ring-4 ring-offset-2 ring-primary"
+                    : "hover:ring-4 hover:ring-primary"
                 } text-white rounded-lg p-4 cursor-pointer select-none tile flex flex-col justify-center items-center 
-                transition-shadow shadow-md ${isSelected ? "shadow-purple-700" : "shadow-purple-500"}`;
+                transition-shadow shadow-md ${isSelected ? "shadow-primary" : "shadow-primary"}`;
 
                 return (
                   <div
@@ -243,7 +243,7 @@ export default function DocumentVerification() {
               name="id-number"
               type="text"
               placeholder="Enter your document number"
-              className="block w-full rounded-md border border-purple-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 py-2 px-3 shadow-sm focus:border-purple-600 focus:ring-4 focus:ring-purple-300 focus:outline-none"
+              className="block w-full rounded-md border border-primary bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 py-2 px-3 shadow-sm focus:border-primary focus:ring-4 focus:ring-primary focus:outline-none"
               value={idNumber}
               onChange={(e) => setIdNumber(e.target.value)}
               maxLength={50}
@@ -255,7 +255,7 @@ export default function DocumentVerification() {
             aria-label="Select Machine Learning Model"
             className="space-y-3"
           >
-            <h3 className="text-xl font-semibold text-purple-600 select-none">
+            <h3 className="text-xl font-semibold text-primary select-none">
               Select Machine Learning Model
             </h3>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -263,10 +263,10 @@ export default function DocumentVerification() {
                 const isSelected = selectedModel === id;
                 const tileClasses = `${color} ${
                   isSelected
-                    ? "ring-4 ring-offset-2 ring-purple-400"
-                    : "hover:ring-4 hover:ring-purple-300"
+                    ? "ring-4 ring-offset-2 ring-primary"
+                    : "hover:ring-4 hover:ring-primary"
                 } text-white rounded-lg p-4 cursor-pointer select-none tile flex flex-col justify-center items-center 
-                transition-shadow shadow-md ${isSelected ? "shadow-purple-700" : "shadow-purple-500"}`;
+                transition-shadow shadow-md ${isSelected ? "shadow-primary" : "shadow-primary"}`;
 
                 return (
                   <div
@@ -286,7 +286,7 @@ export default function DocumentVerification() {
                     <span className="text-lg font-semibold mb-2 text-center">
                       {name}
                     </span>
-                    <span className="bg-purple-800 bg-opacity-60 px-3 py-1 rounded-full text-sm font-semibold">
+                    <span className="bg-primary bg-opacity-60 px-3 py-1 rounded-full text-sm font-semibold">
                       Accuracy: {accuracy}%
                     </span>
                   </div>
@@ -302,7 +302,7 @@ export default function DocumentVerification() {
               onClick={verifyDocument}
               disabled={verifying}
               className={`inline-flex justify-center py-3 px-8 border border-transparent shadow-sm text-lg font-semibold rounded-md text-white 
-                bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-4 focus:ring-purple-300 disabled:opacity-50 disabled:cursor-not-allowed transition`}
+                bg-primary hover:bg-primary focus:outline-none focus:ring-4 focus:ring-primary disabled:opacity-50 disabled:cursor-not-allowed transition`}
             >
               {verifying ? "Verifying..." : "Verify Document"}
             </button>
@@ -310,7 +310,7 @@ export default function DocumentVerification() {
               type="button"
               onClick={clearForm}
               disabled={verifying}
-              className="inline-flex justify-center py-3 px-8 border border-purple-600 text-purple-600 hover:bg-purple-50 dark:hover:bg-gray-600 rounded-md text-lg font-semibold transition disabled:opacity-50 disabled:cursor-not-allowed"
+              className="inline-flex justify-center py-3 px-8 border border-primary text-primary hover:bg-purple-50 dark:hover:bg-gray-600 rounded-md text-lg font-semibold transition disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Clear
             </button>
@@ -324,11 +324,11 @@ export default function DocumentVerification() {
               </p>
               <p className="text-center mt-1 text-green-700 dark:text-green-300">
                 Verified with{" "}
-                <span className="font-bold text-purple-600">
+                <span className="font-bold text-primary">
                   {mlModels.find((m) => m.id === selectedModel)?.name}
                 </span>{" "}
                 at accuracy{" "}
-                <span className="font-bold text-purple-600">
+                <span className="font-bold text-primary">
                   {mlModels.find((m) => m.id === selectedModel)?.accuracy}%
                 </span>
               </p>

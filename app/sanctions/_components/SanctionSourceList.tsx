@@ -65,7 +65,7 @@ export default function SanctionSourceList() {
               key={dataset.id}
               className="
                 relative
-                bg-purple-600 
+                bg-primary 
                 text-white
                 rounded-lg
                 shadow-lg
@@ -76,7 +76,7 @@ export default function SanctionSourceList() {
                 p-5
                 flex flex-col
                 justify-between
-                border-4 border-purple-700
+                border-4 border-gray-300
                 acrylic-blur
               "
               title={dataset.title}
@@ -90,15 +90,15 @@ export default function SanctionSourceList() {
               }}
               onClick={() => alert(`Selected dataset: ${dataset.title}`)}
             >
-              <h2 className="text-xl dark:text-white text-purple-900 font-semibold mb-2 truncate">
+              <h2 className="text-xl text-white font-semibold mb-2 truncate">
                 {dataset.title}
               </h2>
-              <p className="dark:text-purple-200 text-gray-900 text-sm line-clamp-4">
+              <p className="text-gray-300 text-sm line-clamp-4">
                 {dataset.description}
               </p>
               <div className="mt-4 self-end">
                 <button
-                  className="bg-purple-800 hover:bg-purple-900 text-white font-semibold py-1 px-3 rounded-md shadow-md transition"
+                  className="bg-primary hover:bg-secondary text-white font-semibold py-1 px-3 rounded-md shadow-md transition"
                   onClick={(e) => {
                     e.stopPropagation();
                     alert(`Explore dataset: ${dataset.title}`);

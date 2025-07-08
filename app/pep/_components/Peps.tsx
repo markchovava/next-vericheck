@@ -106,14 +106,14 @@ export default function Peps() {
   return (
     <>
     <header className="max-w-4xl mx-auto mb-8">
-        <h1 className="text-4xl font-extrabold text-purple-600 mb-4 select-none">
+        <h1 className="text-4xl font-extrabold text-primary mb-4 select-none">
             Politically Exposed Person (PEP) Datasets
         </h1>
         <p className="text-gray-700 dark:text-gray-300 mb-6 select-none">
             Search through curated datasets focused on politically exposed
             persons from trusted sources.
           </p>
-        <div className='w-full max-w-xl overflow-hidden rounded-md relative bg-gray-800 text-gray-100 flex items-center justify-start border border-purple-600 hover:ring-4 hover:ring-purple-300'>
+        <div className='w-full max-w-xl overflow-hidden rounded-md relative bg-gray-800 text-gray-100 flex items-center justify-start border border-primary hover:ring-4 hover:ring-primary'>
             <input
             type="text"
             aria-label="Search datasets"
@@ -128,7 +128,7 @@ export default function Peps() {
             <button 
                 onClick={searchData}
                 disabled={result.loading}
-                className='group flex-1 p-3 border-l border-purple-600 flex items-center justify-center'>
+                className='group flex-1 p-3 border-l border-primary flex items-center justify-center'>
                 <FaSearch className='group-hover:scale-110 ease-linear duration-200 transition-all' />
             </button>
         </div> 

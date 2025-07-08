@@ -108,7 +108,7 @@ export default function AddressSearchSourceList() {
               key={dataset.id}
               className="
                 relative
-                bg-purple-600 
+                bg-primary 
                 text-white
                 rounded-lg
                 shadow-lg
@@ -119,7 +119,7 @@ export default function AddressSearchSourceList() {
                 p-5
                 flex flex-col
                 justify-between
-                border-4 border-purple-700
+                border-4 border-primary
                 acrylic-blur
               "
               title={dataset.title}
@@ -133,15 +133,15 @@ export default function AddressSearchSourceList() {
               }}
               onClick={() => alert(`Selected dataset: ${dataset.title}`)}
             >
-              <h2 className="text-xl dark:text-white text-purple-900 font-semibold mb-2 truncate">
+              <h2 className="text-xl text-white font-semibold mb-2 truncate">
                 {dataset.title}
               </h2>
-              <p className="dark:text-purple-200 text-gray-900 text-sm line-clamp-4">
+              <p className=" text-gray-300 text-sm line-clamp-4">
                 {dataset.description}
               </p>
               <div className="mt-4 self-end">
                 <button
-                  className="bg-purple-800 hover:bg-purple-900 text-white font-semibold py-1 px-3 rounded-md shadow-md transition"
+                  className="bg-primary hover:bg-primary text-white font-semibold py-1 px-3 rounded-md shadow-md transition"
                   onClick={(e) => {
                     e.stopPropagation();
                     alert(`Explore dataset: ${dataset.title}`);
@@ -157,14 +157,14 @@ export default function AddressSearchSourceList() {
     {/* Add description sections at the bottom */}
     <section className="max-w-6xl mx-auto mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
       <article
-        className="bg-purple-600 text-white rounded-lg p-6 acrylic-blur"
+        className="bg-primary text-gray-300 rounded-lg p-6 acrylic-blur"
         tabIndex={0}
         aria-label="Description about PEP"
       >
         <h3 className="text-2xl font-bold mb-3 select-none flex items-center">
           <IconInfo /> What is a Politically Exposed Person (PEP)?
         </h3>
-        <p className="text-purple-200 text-sm leading-relaxed select-text">
+        <p className="text-sm leading-relaxed select-text">
           Politically Exposed Persons (PEPs) are individuals who hold
           prominent public positions or have significant influence in
           government, politics, or international organizations. Due to their
@@ -175,14 +175,14 @@ export default function AddressSearchSourceList() {
       </article>
 
       <article
-        className="bg-purple-600 text-white rounded-lg p-6 acrylic-blur"
+        className="bg-primary text-gray-300 rounded-lg p-6 acrylic-blur"
         tabIndex={0}
         aria-label="Description about the platform"
       >
         <h3 className="text-2xl font-bold mb-3 select-none flex items-center">
           <IconBuild /> What We Have Been Building
         </h3>
-        <p className="text-purple-200 text-sm leading-relaxed select-text">
+        <p className=" text-sm leading-relaxed select-text">
           We are building a comprehensive platform that aggregates various
           datasets related to politically exposed persons to provide users
           with trustworthy, curated data for compliance, risk assessment,
