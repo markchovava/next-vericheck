@@ -26,11 +26,14 @@ console.log(data);
         </Link>
         <li><FaAngleRight /></li>
         <Link href={`/sanctions/${id}`}>
-          <li className='font-semibold'>{data?.data?.person?.name}</li>
+        {data?.data?.sanction?.name_part_1 && data?.data?.sanction?.name_part_2 &&
+          <li className='font-semibold'>
+            {data?.data?.sanction?.name_part_1 + ' ' + data?.data?.sanction?.name_part_2 || 'User'}
+          </li>
+        }
         </Link>
       </ul>
-
-    
+   
 
       <SanctionUserView id={id} dbData={data} />
 
