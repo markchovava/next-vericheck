@@ -2,15 +2,29 @@ import Image from 'next/image'
 import React from 'react'
 
 export default function SanctionUserView({ id, dbData }) {
- const person = dbData?.data?.person
-  const board = dbData?.data?.board || []
-  const position_held = dbData?.data?.position_held || []
-  const judgement = dbData?.data?.judgement || []
-  const property = dbData?.data?.property || []
-  const company = dbData?.data?.company || []
-  const dependencies = dbData?.data?.dependecies || []
+ const sanction = dbData?.data?.sanction
+ const external_id = dbData?.data?.external_id || []
+   const name_part_1 = dbData?.data?.name_part_1 || []
+   const name_part_2 = dbData?.data?.name_part_2 || []
+   const name_part_3 = dbData?.data?.name_part_3 || []
+   const name_part_4 = dbData?.data?.name_part_4 || []
+   const name_of_original_script = dbData?.data?.name_of_original_script || []
+   const title = dbData?.data?.title || []
+   const designation = dbData?.data?.designation || []
+   const date_of_birth = dbData?.data?.date_of_birth || []
+   const place_of_birth = dbData?.data?.place_of_birth || []
+   const good_quality_aka = dbData?.data?.good_quality_aka || []
+   const low_quality_aka = dbData?.data?.low_quality_aka || []
+   const nationality = dbData?.data?.nationality || []
+   const passport_no = dbData?.data?.passport_no || []
+   const national_identification_no = dbData?.data?.national_identification_no || []
+   const address = dbData?.data?.address || []
+   const listed_on = dbData?.data?.listed_on || []
+   const amended_on = dbData?.data?.amended_on || []
+   const other_information = dbData?.data?.other_information || []
+   const interpol_link = dbData?.data?.interpol_link || []
   
-
+console.log(good_quality_aka);
   // Add safety checks for dbData
   if (!dbData) {
     return (
@@ -26,241 +40,248 @@ export default function SanctionUserView({ id, dbData }) {
       <h2 className='text-center text-[3rem] font-bold text-gray-300 mb-4'>
         User Information
       </h2>
-    
+
       <div className='max-w-4xl p-6 mx-auto rounded-2xl bg-gray-800 flex items-start justify-start mb-6'>
         {/* LEFT */}
         <div className='p-3 flex-2 flex flex-col items-center justify-start'>
           <div className='w-[60%] relative aspect-[1/1] rounded-full overflow-hidden mb-3'>
-            <Image 
-              src={`/assets/img/no-img.jpg`} 
+            <Image
+              src={`/assets/img/no-img.jpg`}
               fill
-              alt="No Image" 
+              alt="No Image"
               className='object-cover'
             />
           </div>
           <p className='font-bold text-4xl text-gray-300 mb-6'>
-            {person?.name || 'Not Added'}
+            {sanction?.name || 'Not Added'}
           </p>
           <div className='w-[100%] mb-6'>
-              <p className='text-gray-400 text-sm uppercase'>SANCTION</p>
-              <p className='text-lg text-red-500'>
-                {'Under Sanctions'}
-              </p>
+            <p className='text-gray-400 text-sm uppercase'>SANCTION</p>
+            <p className='text-lg text-red-500'>
+              {'Under Sanctions'}
+            </p>
           </div>
           <div className='w-[100%] mb-6'>
-              <p className='text-gray-400 text-sm uppercase'>PEP</p>
-              <p className='text-lg text-green-500'>
-                {'Under PEP'}
-              </p>
+            <p className='text-gray-400 text-sm uppercase'>PEP</p>
+            <p className='text-lg text-green-500'>
+              {'Under PEP'}
+            </p>
           </div>
         </div>
         {/* RIGHT */}
         <div className='flex-5 px-4'>
-          {person?.status &&
-           <div className='w-[100%] mb-6'>
+          {sanction?.status &&
+            <div className='w-[100%] mb-6'>
               <p className='text-gray-400 text-sm uppercase'>STATUS:</p>
-              <p className='text-lg text-gray-300'>{person?.status}</p>
-          </div>
+              <p className='text-lg text-gray-300'>{sanction?.status}</p>
+            </div>
           }
-          {person?.home_address &&
+
+          {/* New Fields */}
           <div className='w-[100%] mb-6'>
-              <p className='text-gray-400 text-sm uppercase'>LIVE IN</p>
-              <p className='text-lg text-gray-300'>{person?.home_address}</p>
+            <p className='text-gray-400 text-sm uppercase'>EXTERNAL ID</p>
+            <p className='text-lg text-gray-300'>{sanction?.external_id || 'Not Available'}</p>
           </div>
-          }
-          {person?.work_address &&
+
           <div className='w-[100%] mb-6'>
+            <p className='text-gray-400 text-sm uppercase'>NAME PART 1</p>
+            <p className='text-lg text-gray-300'>{sanction?.name_part_1 || 'Not Available'}</p>
+          </div>
+
+          <div className='w-[100%] mb-6'>
+            <p className='text-gray-400 text-sm uppercase'>NAME PART 2</p>
+            <p className='text-lg text-gray-300'>{sanction?.name_part_2 || 'Not Available'}</p>
+          </div>
+
+          <div className='w-[100%] mb-6'>
+            <p className='text-gray-400 text-sm uppercase'>NAME PART 3</p>
+            <p className='text-lg text-gray-300'>{sanction?.name_part_3 || 'Not Available'}</p>
+          </div>
+
+          <div className='w-[100%] mb-6'>
+            <p className='text-gray-400 text-sm uppercase'>NAME PART 4</p>
+            <p className='text-lg text-gray-300'>{sanction?.name_part_4 || 'Not Available'}</p>
+          </div>
+
+          <div className='w-[100%] mb-6'>
+            <p className='text-gray-400 text-sm uppercase'>ORIGINAL SCRIPT NAME</p>
+            <p className='text-lg text-gray-300'>{sanction?.name_of_original_script || 'Not Available'}</p>
+          </div>
+
+          <div className='w-[100%] mb-6'>
+            <p className='text-gray-400 text-sm uppercase'>TITLE</p>
+            <p className='text-lg text-gray-300'>{sanction?.title || 'Not Available'}</p>
+          </div>
+
+          <div className='w-[100%] mb-6'>
+            <p className='text-gray-400 text-sm uppercase'>DESIGNATION</p>
+            <p className='text-lg text-gray-300'>{sanction?.designation || 'Not Available'}</p>
+          </div>
+
+          <div className='w-[100%] mb-6'>
+            <p className='text-gray-400 text-sm uppercase'>DATE OF BIRTH</p>
+            <p className='text-lg text-gray-300'>{sanction?.date_of_birth || 'Not Available'}</p>
+          </div>
+
+          <div className='w-[100%] mb-6'>
+            <p className='text-gray-400 text-sm uppercase'>PLACE OF BIRTH</p>
+            <p className='text-lg text-gray-300'>{sanction?.place_of_birth || 'Not Available'}</p>
+          </div>
+
+          <div className='w-[100%] mb-6'>
+            <p className='text-gray-400 text-sm uppercase'>GOOD QUALITY AKA</p>
+            <p className='text-lg text-gray-300'>{sanction?.good_quality_aka || 'Not Available'}</p>
+          </div>
+
+          <div className='w-[100%] mb-6'>
+            <p className='text-gray-400 text-sm uppercase'>LOW QUALITY AKA</p>
+            <p className='text-lg text-gray-300'>{sanction?.low_quality_aka || 'Not Available'}</p>
+          </div>
+
+          <div className='w-[100%] mb-6'>
+            <p className='text-gray-400 text-sm uppercase'>NATIONALITY</p>
+            <p className='text-lg text-gray-300'>{sanction?.nationality || 'Not Available'}</p>
+          </div>
+
+          <div className='w-[100%] mb-6'>
+            <p className='text-gray-400 text-sm uppercase'>PASSPORT NO</p>
+            <p className='text-lg text-gray-300'>{sanction?.passport_no || 'Not Available'}</p>
+          </div>
+
+          <div className='w-[100%] mb-6'>
+            <p className='text-gray-400 text-sm uppercase'>NATIONAL IDENTIFICATION NO</p>
+            <p className='text-lg text-gray-300'>{sanction?.national_identification_no || 'Not Available'}</p>
+          </div>
+
+          <div className='w-[100%] mb-6'>
+            <p className='text-gray-400 text-sm uppercase'>ADDRESS</p>
+            <p className='text-lg text-gray-300'>{sanction?.address || 'Not Available'}</p>
+          </div>
+
+          <div className='w-[100%] mb-6'>
+            <p className='text-gray-400 text-sm uppercase'>LISTED ON</p>
+            <p className='text-lg text-gray-300'>{sanction?.listed_on || 'Not Available'}</p>
+          </div>
+
+          <div className='w-[100%] mb-6'>
+            <p className='text-gray-400 text-sm uppercase'>AMENDED ON</p>
+            <p className='text-lg text-gray-300'>{sanction?.amended_on || 'Not Available'}</p>
+          </div>
+
+          <div className='w-[100%] mb-6'>
+            <p className='text-gray-400 text-sm uppercase'>OTHER INFORMATION</p>
+            <p className='text-lg text-gray-300'>{sanction?.other_information || 'Not Available'}</p>
+          </div>
+
+          <div className='w-[100%] mb-6'>
+            <p className='text-gray-400 text-sm uppercase'>INTERPOL LINK</p>
+            <p className='text-lg text-gray-300'>{sanction?.interpol_link || 'Not Available'}</p>
+          </div>
+
+          {/* Existing Fields (moved below new ones for better flow in this snippet) */}
+          
+          {sanction?.work_address &&
+            <div className='w-[100%] mb-6'>
               <p className='text-gray-400 text-sm uppercase'>WORK ADDRESS</p>
-              <p className='text-lg text-gray-300'>{person?.work_address}</p>
-          </div>
+              <p className='text-lg text-gray-300'>{sanction?.work_address}</p>
+            </div>
           }
-          {person?.email &&
-          <div className='w-[100%] mb-6'>
+          {sanction?.email &&
+            <div className='w-[100%] mb-6'>
               <p className='text-gray-400 text-sm uppercase'>EMAIL</p>
-              <p className='text-lg text-gray-300'>{person?.email}</p>
-          </div>
+              <p className='text-lg text-gray-300'>{sanction?.email}</p>
+            </div>
           }
-          {person?.mobile &&
-          <div className='w-[100%] mb-6'>
+          {sanction?.mobile &&
+            <div className='w-[100%] mb-6'>
               <p className='text-gray-400 text-sm uppercase'>PHONE NUMBER(S):</p>
-              <p className='text-lg text-gray-300'>{person?.mobile}</p>
-          </div>
+              <p className='text-lg text-gray-300'>{sanction?.mobile}</p>
+            </div>
           }
-          {person?.home_phone &&
-          <div className='w-[100%] mb-6'>
+          {sanction?.home_phone &&
+            <div className='w-[100%] mb-6'>
               <p className='text-gray-400 text-sm uppercase'>HOME PHONE(S):</p>
-              <p className='text-lg text-gray-300'>{person?.home_phone}</p>
-          </div>
+              <p className='text-lg text-gray-300'>{sanction?.home_phone}</p>
+            </div>
           }
-          {person?.work_phone &&
-           <div className='w-[100%] mb-6'>
+          {sanction?.work_phone &&
+            <div className='w-[100%] mb-6'>
               <p className='text-gray-400 text-sm uppercase'>WORK PHONE(S):</p>
-              <p className='text-lg text-gray-300'>{person?.work_phone}</p>
-          </div>
+              <p className='text-lg text-gray-300'>{sanction?.work_phone}</p>
+            </div>
           }
-          {person?.dob &&
-          <div className='w-[100%] mb-6'>
+          {sanction?.dob &&
+            <div className='w-[100%] mb-6'>
               <p className='text-gray-400 text-sm uppercase'>Date of Birth:</p>
-              <p className='text-lg text-gray-300'>{person?.dob}</p>
-          </div>
+              <p className='text-lg text-gray-300'>{sanction?.dob}</p>
+            </div>
           }
-          {person?.marital_status &&
-          <div className='w-[100%] mb-6'>
+          {sanction?.marital_status &&
+            <div className='w-[100%] mb-6'>
               <p className='text-gray-400 text-sm uppercase'>Marital Status:</p>
-              <p className='text-lg text-gray-300'>{person?.marital_status}</p>
-          </div>
+              <p className='text-lg text-gray-300'>{sanction?.marital_status}</p>
+            </div>
           }
-          {person?.id_no &&
-           <div className='w-[100%] mb-6'>
+          {sanction?.id_no &&
+            <div className='w-[100%] mb-6'>
               <p className='text-gray-400 text-sm uppercase'>ID NUMBER:</p>
-              <p className='text-lg text-gray-300'>{person?.id_no}</p>
-          </div>
+              <p className='text-lg text-gray-300'>{sanction?.id_no}</p>
+            </div>
           }
-          {person?.gender &&
-          <div className='w-[100%] mb-6'>
+          {sanction?.gender &&
+            <div className='w-[100%] mb-6'>
               <p className='text-gray-400 text-sm uppercase'>Gender:</p>
-              <p className='text-lg text-gray-300'>{person?.gender}</p>
-          </div>
+              <p className='text-lg text-gray-300'>{sanction?.gender}</p>
+            </div>
           }
-          {person?.education &&
-          <div className='w-[100%] mb-6'>
+          {sanction?.education &&
+            <div className='w-[100%] mb-6'>
               <p className='text-gray-400 text-sm uppercase'>Education:</p>
-              <p className='text-lg text-gray-300'>{person?.education}</p>
-          </div>
+              <p className='text-lg text-gray-300'>{sanction?.education}</p>
+            </div>
           }
-          {person?.career &&
-          <div className='w-[100%] mb-6'>
+          {sanction?.career &&
+            <div className='w-[100%] mb-6'>
               <p className='text-gray-400 text-sm uppercase'>CAREER:</p>
-              <p className='text-lg text-gray-300'>{person?.career}</p>
-          </div>
+              <p className='text-lg text-gray-300'>{sanction?.career}</p>
+            </div>
           }
-          {person?.interest &&
-          <div className='w-[100%] mb-6'>
+          {sanction?.interest &&
+            <div className='w-[100%] mb-6'>
               <p className='text-gray-400 text-sm uppercase'>INTEREST:</p>
-              <p className='text-lg text-gray-300'>{person?.interest}</p>
-          </div>
+              <p className='text-lg text-gray-300'>{sanction?.interest}</p>
+            </div>
           }
-          {person?.hobbies &&
-           <div className='w-[100%] mb-6'>
+          {sanction?.hobbies &&
+            <div className='w-[100%] mb-6'>
               <p className='text-gray-400 text-sm uppercase'>HOBBIES:</p>
-              <p className='text-lg text-gray-300'>{person?.hobbies}</p>
-          </div>
+              <p className='text-lg text-gray-300'>{sanction?.hobbies}</p>
+            </div>
           }
-          {person?.children &&
-          <div className='w-[100%] mb-6'>
+          {sanction?.children &&
+            <div className='w-[100%] mb-6'>
               <p className='text-gray-400 text-sm uppercase'>Children:</p>
-              <p className='text-lg text-gray-300'>{person?.children}</p>
-          </div>
+              <p className='text-lg text-gray-300'>{sanction?.children}</p>
+            </div>
           }
-          {person?.employer &&
-          <div className='w-[100%] mb-6'>
+          {sanction?.employer &&
+            <div className='w-[100%] mb-6'>
               <p className='text-gray-400 text-sm uppercase'>EMPLOYER:</p>
-              <p className='text-lg text-gray-300'>{person?.employer}</p>
-          </div>
+              <p className='text-lg text-gray-300'>{sanction?.employer}</p>
+            </div>
           }
-          {person?.educational_institutes &&
-           <div className='w-[100%] mb-6'>
+          {sanction?.educational_institutes &&
+            <div className='w-[100%] mb-6'>
               <p className='text-gray-400 text-sm uppercase'>Educational Institutes:</p>
-              <p className='text-lg text-gray-300'>{person?.educational_institutes}</p>
-          </div>
+              <p className='text-lg text-gray-300'>{sanction?.educational_institutes}</p>
+            </div>
           }
-          {person?.sources &&
-          <div className='w-[100%] mb-6'>
+          {sanction?.sources &&
+            <div className='w-[100%] mb-6'>
               <p className='text-gray-400 text-sm uppercase'>Sources:</p>
-              <p className='text-lg text-gray-300'>{person?.sources}</p>
-          </div>
-          }
-
-          {dependencies.length > 0 &&
-            <div className='w-[100%] mb-6'>
-              <p className='text-gray-400 text-sm uppercase'>Dependencies:</p>
-                {dependencies.map((i, key) => (
-                <div key={key} className='text-lg text-gray-300 mb-2'>
-                    <span>{i.spouse_name}</span>
-                    <span className='ml-2 italic text-amber-300'>
-                      {i.relationship && `(${i.relationship})`}
-                    </span>
-                </div>
-                ))}
+              <p className='text-lg text-gray-300'>{sanction?.sources}</p>
             </div>
           }
-
-
-          { company.length > 0 &&
-            <div className='w-[100%] mb-6'>
-              <p className='text-gray-400 text-sm uppercase'>Company:</p>
-                { company.map((i, key) => (
-                <div key={key} className='text-lg text-gray-300 mb-2'>
-                    <span>{i.company}</span>
-                    <span className='ml-2 italic text-amber-300'>
-                      {i.status && i.status}
-                    </span>
-                </div>
-                )) }
-            </div>
-          }
-
-          { property.length > 0 &&
-            <div className='w-[100%] mb-6'>
-              <p className='text-gray-400 text-sm uppercase'>Property:</p>
-              <div className='text-lg text-gray-300'>
-                {property.map((i, key) => (
-                  <div key={key}>
-                    <span>{i.property_name}</span>
-                    <span className='ml-2 italic text-amber-300'>
-                      {i.property_type}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          }
-
-          {board.length > 0 &&
-            <div className='w-[100%] mb-6'>
-              <p className='text-gray-400 text-sm uppercase'>Board:</p>
-              <div className='text-lg text-gray-300'>
-                {board.map((i, key) => (
-                  <p key={key}>{i.company}</p>
-                ))}
-              </div>
-            </div>
-          }
-
-        {position_held.length > 0 &&
-          <div className='w-[100%] mb-6'>
-            <p className='text-gray-400 text-sm uppercase'>Position Held:</p>
-            <div className='text-lg text-gray-300'>
-              {position_held.map((i, key) => (
-                <p key={key}>{i.position_held}</p>
-              ))}
-            </div>
-          </div>
-        }
-
-        {judgement.length > 0 &&
-          <div className='w-[100%] mb-6'>
-            <p className='text-gray-400 text-sm uppercase'>Judgement:</p>
-              {judgement.map((i, key) => (
-                <div key={key} className='text-lg text-gray-300'>
-                  <p>
-                    <span className='mr-2'>Ref:</span>
-                    <span className='text-amber-300'>{i.ref}</span> 
-                  </p>
-                  <p>
-                    <span className='mr-2'>Case No:</span>
-                    <span className='text-amber-300'>{i.case_no}</span> 
-                  </p>
-                  <p>
-                    <span className='mr-2'>Case Description:</span>
-                    <span className='text-amber-300'>{i.case_description}</span> 
-                  </p>
-              </div>
-              ))}
-          </div>
-        }
-
-
         </div>
       </div>
 

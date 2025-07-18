@@ -46,51 +46,45 @@ export default function SanctionResult({ dbData, getData }) {
                     <div className='w-[100%] flex justify-between'>   
                         <div className='flex-3 text-xl'>
                             <div className='w-[100%] mb-6 flex justify-start items-center gap-3'>
-                                <p className='text-primary'>{i.name || 'Unknown'}</p>
+                                <p className='text-primary'>{i.name_part_1 || ''} {i.name_part_2 || ''} {i.name_part_3 || ''} {i.name_part_4 || ''}</p>
                                 {i.status &&
                                 <>
                                     <p className='text-gray-500'>|</p>
                                     <p className='text-green-500'>{trimString(i.status, 30)}</p>
                                 </>
                                 }
-                                {i.gender &&
+                                {i.title &&
                                 <>
                                     <p className='text-gray-500'>|</p>
-                                    <p>{i.gender}</p>
+                                    <p>{i.title}</p>
                                 </>
                                 }
                             </div>
-                            {i.home_address &&
+                            {i.date_of_birth &&
                             <div className='w-[75%] mb-6'>
-                                <p className='text-gray-400 text-sm uppercase'>LIVE IN</p>
-                                <p className='text-lg'>{i.home_address}  </p>
+                                <p className='text-gray-400 text-sm uppercase'>DATE OF BIRTH</p>
+                                <p className='text-lg'>{i.date_of_birth}  </p>
                             </div>
                             }
-                            {i.mobile &&
+                            {i.nationality &&
                             <div className='w-[100%] mb-6'>
-                                <p className='text-gray-400 text-sm uppercase'>Phone number(s):</p>
-                                <p className='text-lg'>{i.mobile}  </p>
+                                <p className='text-gray-400 text-sm uppercase'>NATIONALITY:</p>
+                                <p className='text-lg'>{i.nationality}  </p>
                             </div>
                             }
-                            {/* Show only first 6 dependencies */}
-                            {i.dependencies && Array.isArray(i.dependencies) && i.dependencies.length > 0 &&
-                            <div className='w-[100%] '>
-                                <p className='text-gray-400 text-sm uppercase'>May be related to:</p>
-                                <p className='text-lg flex -ml-2'>
-                                    {i.dependencies.slice(0, 5).map((x, y) => (
-                                        <React.Fragment key={y}>
-                                            <span className='mx-2'>{x.spouse_name || 'Unknown'}</span> 
-                                            {y + 1 < Math.min(i.dependencies.length, 6) && <span className='mx-1'>•</span>}
-                                        </React.Fragment>
-                                    ))}
-                                    {i.dependencies.length > 5 && (
-                                        <span className='mx-2 text-gray-500'>
-                                            +{i.dependencies.length - 8} more
-                                        </span>
-                                    )}
-                                </p>
+                            {i.listed_on &&
+                            <div className='w-[100%] mb-6'>
+                                <p className='text-gray-400 text-sm uppercase'>LISTED ON:</p>
+                                <p className='text-lg'>{i.listed_on}  </p>
                             </div>
                             }
+                            {i.good_quality_aka &&
+                            <div className='w-[100%] mb-6'>
+                                <p className='text-gray-400 text-sm uppercase'>GOOD QUALITY AKA:</p>
+                                <p className='text-lg'>{i.good_quality_aka}  </p>
+                            </div>
+                            }
+                            
                         </div>    
                         <div className='flex-1 flex justify-end'>
                             <Link href={`/sanctions/${i.id}`}>

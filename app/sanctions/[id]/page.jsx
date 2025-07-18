@@ -2,15 +2,15 @@ import Link from 'next/link';
 import React from 'react'
 import { FaAngleRight } from "react-icons/fa";
 import SanctionUserView from './_components/SanctionUserView';
-import { censoredPeopleViewAction } from '../../_actions/CensoredPeopleActions';
+import { unConsolidatedSanctionViewAction } from '../../_actions/UNConsolidatedSanctionsEntriesAction';
 
 
 
 export default async function page({ params: {id} }) {
-  const [data, ] = await Promise.all([censoredPeopleViewAction( parseInt(id) ), ])
+  const [data, ] = await Promise.all([unConsolidatedSanctionViewAction( parseInt(id) ), ])
 
 
-
+console.log(data);
   return (
     <>
 
@@ -30,6 +30,7 @@ export default async function page({ params: {id} }) {
         </Link>
       </ul>
 
+    
 
       <SanctionUserView id={id} dbData={data} />
 

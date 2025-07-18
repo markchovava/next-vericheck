@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import SanctionResult from './SanctionResult';
 import SanctionSourceList from './SanctionSourceList';
 import { FaSearch } from 'react-icons/fa';
-import { censoredPeoplePaginateAction, censoredPeopleSearchAction } from '../../_actions/CensoredPeopleActions';
+import { unConsolidatedSanctionPaginateAction, unConsolidatedSanctionSearchAction } from '../../_actions/UNConsolidatedSanctionsEntriesAction';
 
 export default function Sanctions() {
     const [result, setResult] = useState({
@@ -29,7 +29,7 @@ export default function Sanctions() {
             loadMore: true
         })
         try {
-            const res = await censoredPeoplePaginateAction(url) 
+            const res = await unConsolidatedSanctionPaginateAction(url) 
             console.log(res)
             
             // Ensure res.data exists and is an array
@@ -83,7 +83,7 @@ export default function Sanctions() {
         setIsResult(true)
         
         try {
-            const res = await censoredPeopleSearchAction(query) 
+            const res = await unConsolidatedSanctionSearchAction(query) 
             console.log("res", res)
             
             // Ensure res.data exists and is an array
